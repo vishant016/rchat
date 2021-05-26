@@ -115,7 +115,9 @@ class App extends Component {
         }));
         console.log(snapshot.val());
       });
-    this.setState({ isLoggedIn: true });
+      if ((this.state.name.length < 4) | this.state.name.includes(" "))
+      this.setState({ isLoggedIn: false });
+    else this.setState({ isLoggedIn: true });
 
     value.preventDefault();
   };
@@ -302,6 +304,12 @@ class App extends Component {
                 >
                   Start
                 </Button>
+                 <center>
+                  <span center color="blue">
+                    length should be atleast 4 <br></br>
+                    should not contain space
+                  </span>
+                </center>
                 {/* <Grid container>
                   <Grid item xs>
                     <Link href="#" variant="body2">
