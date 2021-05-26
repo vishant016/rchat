@@ -209,7 +209,7 @@ class App extends Component {
                           </Avatar>
                         }
                         title={
-                          message.name +
+                          message.name 
                           +"                 " +
                           message.timestamp.split(" ")[4]
                         }
@@ -266,6 +266,7 @@ class App extends Component {
                   variant="outlined"
                   margin="normal"
                   required
+                  disabled
                   fullWidth
                   id="email"
                   label="Chatroom Name"
