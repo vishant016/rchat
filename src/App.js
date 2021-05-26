@@ -115,7 +115,7 @@ class App extends Component {
         }));
         console.log(snapshot.val());
       });
-      if ((this.state.name.length < 4) | this.state.name.includes(" "))
+      if ((this.state.name.length < 4) | (this.state.name.length > 8) | this.state.name.includes(" "))
       this.setState({ isLoggedIn: false });
     else this.setState({ isLoggedIn: true });
 
@@ -127,6 +127,8 @@ class App extends Component {
     e.preventDefault();
   };
   onButtonClicked = (e) => {
+    if (!this.state.value.replace(/\s/g, "").length) {
+    } else {
     this.state.database.ref("Messages").push({
       name: this.state.name,
       message: this.state.value,
@@ -142,7 +144,7 @@ class App extends Component {
     );
 
     this.setState({ value: "" });
-
+    }
     e.preventDefault();
   };
 
@@ -306,7 +308,7 @@ class App extends Component {
                 </Button>
                  <center>
                   <span center color="blue">
-                    length should be atleast 4 <br></br>
+                    length should be between 4 and 8 <br></br>
                     should not contain space
                   </span>
                 </center>
