@@ -123,7 +123,7 @@ class App extends Component {
   };
 
   backClick = (e) => {
-    this.setState({ isLoggedIn: false, value: "" });
+    this.setState({ isLoggedIn: false, value: "" , messages: [] });
     e.preventDefault();
   };
   onButtonClicked = (e) => {
